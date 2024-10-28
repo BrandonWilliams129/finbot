@@ -1,3 +1,4 @@
+
 /* Import Google Font */
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap');
 
@@ -110,6 +111,17 @@ nav ul li a:hover {
   margin-bottom: 50px;
   opacity: 0;
   transform: translateY(50px);
+}
+
+.feature img {
+  width: 100%; /* Make the image responsive */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 5px;
+  transition: transform 0.3s ease; /* Add smooth transition */
+}
+
+.feature img:hover {
+  transform: scale(1.05); /* Zoom-in effect on hover */
 }
 
 .benefit h2, .feature h2 {
