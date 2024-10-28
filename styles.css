@@ -8,13 +8,50 @@
   box-sizing: border-box;
 }
 
-/* Body Styling */
+/* Global Styles */
 body {
+  background: linear-gradient(135deg, #e6f2ff, #ffffff);
   font-family: 'Poppins', sans-serif;
-  overflow-x: hidden;
-  background: linear-gradient(to bottom right, #ffffff, #e0e0e0); /* Soft white to light gray gradient */
+  margin: 0;
+  padding: 0;
+  color: #333; /* Dark gray for readable text */
+  line-height: 1.6; /* Increase line height for better legibility */
 }
 
+h2, h3 {
+  color: #007BFF; /* Keep headers distinct with a shade that matches your primary color */
+}
+
+a {
+  color: #007BFF;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #0056b3; /* Darker shade for hover */
+}
+
+/* Component Styles */
+.card {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 25px;
+}
 /* Navigation Bar Styling */
 nav {
   position: fixed;
@@ -415,11 +452,14 @@ nav ul li a:hover {
   cursor: pointer;
   font-size: 16px;
   transition: background 0.3s, transform 0.3s;
+  transition: box-shadow 0.3s, transform 0.3s;
 }
 
 .btn:hover {
   background: #0056b3;
   transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
 }
 
 /* Dashboard Styling */
