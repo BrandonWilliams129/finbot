@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Check if user is logged in
   if (localStorage.getItem('loggedIn') !== 'true') {
     if (window.location.pathname.includes('dashboard.html')) {
+      console.log("User not logged in, redirecting to login.");
       window.location.href = 'login.html';
     }
   }
@@ -95,6 +96,54 @@ document.addEventListener('DOMContentLoaded', function () {
       adviceDiv.innerHTML = adviceText;
       adviceDiv.style.opacity = 1;
       adviceDiv.classList.add('fade-in');
+    });
+  }
+
+  // Handle Compounding Interest Calculator
+  const openCalculator = document.getElementById('openCalculator');
+  const calculatorModal = document.getElementById('calculatorModal');
+  const closeModal = document.getElementById('closeModal');
+  const calcForm = document.getElementById('calcForm');
+  const calcResult = document.getElementById('calcResult');
+
+  // Open Modal
+  if (openCalculator) {
+    openCalculator.addEventListener('click', () => {
+      calculatorModal.style.display = 'block';
+    });
+  }
+
+  // Close Modal
+  if (closeModal) {
+    closeModal.addEventListener('click', () => {
+      calculatorModal.style.display = 'none';
+    });
+  }
+
+  // Handle Calculator Form Submission
+  if (calcForm) {
+    calcForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const principal = parseFloat(document.getElementById('principal').value);
+      const rate = parseFloat(document.getElementById('rate').value) / 100;
+      const years = parseInt(document.getElementById('years').value);
+
+      // Calculate Compound Interest
+      const amount = principal * Math.pow((1 + rate), years);
+      const interest = amount - principal;
+
+      // Display Result
+      calcResult.innerHTML = `<strong>Future Value:</strong> $${amount.toFixed(2)}<br><strong>Total Interest Earned:</strong> $${interest.toFixed(2)}`;
+    });
+  }
+
+  // Handle Skip Login
+  const skipLogin = document.getElementById('skip-login');
+  if (skipLogin) {
+    skipLogin.addEventListener('click', function (e) {
+      e.preventDefault();
+      localStorage.setItem('loggedIn', 'true'); // Setting loggedIn to true
+      window.location.href = 'dashboard.html'; // Redirect to dashboard
     });
   }
 
