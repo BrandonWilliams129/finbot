@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard - FinBot.ai</title>
+  <!-- Link to the CSS stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="logo">
+      <img src="images/finbot-logo.png" alt="FinBot.ai Logo" height="40">
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#" id="logout">Logout</a></li>
+    </ul>
+  </nav>
+  
+  <!-- Dashboard Content -->
+  <div class="dashboard-container">
+    <form id="financeForm">
+      <h2>Enter Your Financial Details</h2>
+      <!-- Income Field -->
+      <div class="input-group">
+        <input type="number" id="income" required>
+        <label for="income">Monthly Income ($)</label>
+      </div>
+      <!-- Expenses Field -->
+      <div class="input-group">
+        <input type="number" id="expenses" required>
+        <label for="expenses">Monthly Expenses ($)</label>
+      </div>
+      <!-- Savings Field -->
+      <div class="input-group">
+        <input type="number" id="savings" required>
+        <label for="savings">Monthly Savings ($)</label>
+      </div>
+      <!-- Financial Goal Field -->
+      <div class="input-group">
+        <input type="number" id="goal" required>
+        <label for="goal">Financial Goal ($)</label>
+      </div>
+      <!-- Debts Field (Allow Negative Numbers) -->
+      <div class="input-group">
+        <input type="number" id="debts">
+        <label for="debts">Debts ($)</label>
+      </div>
+      <!-- Get Advice Button -->
+      <button type="submit" class="btn">Get Advanced Advice</button>
+    </form>
+    <!-- Advice Display -->
+    <div id="advice" class="advice"></div>
+  </div>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <h2>Financial Literacy FAQ</h2>
+    <div class="faq">
+      <h3>How do I save more effectively?</h3>
+      <p>To save effectively, start by creating a budget to track income and expenses. Set aside at least 20% of your income for savings and try to minimize unnecessary spending.</p>
+
+      <h3>How can I plan for retirement?</h3>
+      <p>Planning for retirement starts with understanding your future financial needs. Consider opening a retirement account, such as an IRA or 401(k), and contribute regularly.</p>
+
+      <h3>What is the best way to manage debts?</h3>
+      <p>Focus on paying off high-interest debt first while maintaining minimum payments on other obligations. Avoid accumulating new debts unless absolutely necessary.</p>
+    </div>
+  </section>
+
+  <!-- Compounding Interest Calculator -->
+<button id="openCalculator" class="btn">Open Compounding Interest Calculator</button>
+<div id="calculatorModal" class="modal">
+  <div class="modal-content">
+    <span id="closeModal" class="close">&times;</span>
+    <h2>Compounding Interest Calculator</h2>
+    <form id="calcForm">
+      <div class="input-group">
+        <input type="number" id="principal" placeholder="Initial Savings ($)" required>
+      </div>
+      <div class="input-group">
+        <input type="number" id="rate" placeholder="Annual Interest Rate (%)" required>
+      </div>
+      <div class="input-group">
+        <input type="number" id="years" placeholder="Years" required>
+      </div>
+      <button type="submit" class="btn">Calculate</button>
+    </form>
+    <div id="calcResult"></div>
+  </div>
+</div>
+
+  <!-- Donation Buttons Section -->
+  <div class="donation-buttons">
+    <a href="https://www.paypal.com/donate?hosted_button_id=YOUR_PAYPAL_ID" class="btn">Donate with PayPal</a>
+    <a href="bitcoin:YOUR_BITCOIN_ADDRESS" class="btn">Donate with Bitcoin</a>
+  </div>
+
+  <!-- Footer -->
+<footer id="footer">
+  <p>&copy; 2024 FinBot.ai. All rights reserved.</p>
+  <div class="social-media">
+    <a href="https://www.facebook.com" target="_blank">
+      <i class="fab fa-facebook fa-2x"></i>
+    </a>
+    <a href="https://x.com" target="_blank">
+      <i class="fab fa-twitter fa-2x"></i>
+    </a>
+    <a href="https://www.instagram.com" target="_blank">
+      <i class="fab fa-instagram fa-2x"></i>
+    </a>
+    <a href="https://www.linkedin.com" target="_blank">
+      <i class="fab fa-linkedin fa-2x"></i>
+    </a>
+  </div>
+</footer>
+
+
+  <!-- Link to the JavaScript file -->
+  <script src="script.js"></script>
+</body>
+</html>

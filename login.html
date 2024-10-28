@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - FinBot.ai</title>
+  <!-- Link to the CSS stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="logo">
+      <img src="images/finbot-logo.png" alt="FinBot.ai Logo" height="40">
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#footer">Contact</a></li>
+    </ul>
+  </nav>
+  
+  <!-- Marketing Content Above Login -->
+  <section class="login-marketing">
+    <h2>Join FinBot.ai Today</h2>
+    <p>Unlock personalized financial insights and take the first step towards financial freedom.</p>
+  </section>
+  
+  <!-- Login Form Container -->
+  <div class="login-container">
+    <form id="loginForm">
+      <h2>Login to Your Account</h2>
+      <!-- Email Field -->
+      <div class="input-group">
+        <input type="email" id="email" required>
+        <label for="email">Email Address</label>
+      </div>
+      <!-- Password Field -->
+      <div class="input-group">
+        <input type="password" id="password" required>
+        <label for="password">Password</label>
+      </div>
+      <!-- Password Requirements -->
+      <p class="password-requirements">Password must contain at least 1 number and 1 symbol.</p>
+      <!-- Login Button -->
+      <button type="submit" class="btn">Login</button>
+      <!-- Error Message -->
+      <p id="error-message" class="error-message"></p>
+    </form>
+  </div>
+
+  <!-- Skip Login Section -->
+  <div class="skip-login">
+    <p class="skip-prompt">Don't want to log in? <a href="dashboard.html" id="skip-login">Skip login</a></p>
+    <p class="info-message">Note: Your information won't be saved, but you can still access financial calculators and investment advice.</p>
+  </div>
+  <!-- Footer -->
+<footer id="footer">
+  <p>&copy; 2024 FinBot.ai. All rights reserved.</p>
+  <div class="social-media">
+    <a href="https://www.facebook.com" target="_blank">
+      <i class="fab fa-facebook fa-2x"></i>
+    </a>
+    <a href="https://x.com" target="_blank">
+      <i class="fab fa-twitter fa-2x"></i>
+    </a>
+    <a href="https://www.instagram.com" target="_blank">
+      <i class="fab fa-instagram fa-2x"></i>
+    </a>
+    <a href="https://www.linkedin.com" target="_blank">
+      <i class="fab fa-linkedin fa-2x"></i>
+    </a>
+  </div>
+</footer>
+
+  
+  <!-- Link to the JavaScript file -->
+  <script src="script.js"></script>
+</body>
+</html>
