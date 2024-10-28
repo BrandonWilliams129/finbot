@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard - FinBot.ai</title>
+  <!-- Link to the CSS stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="logo">
+      <img src="images/logo.png" alt="FinBot.ai Logo" height="40">
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#" id="logout">Logout</a></li>
+    </ul>
+  </nav>
+  
+  <!-- Dashboard Content -->
+  <div class="dashboard-container">
+    <form id="financeForm">
+      <h2>Enter Your Financial Details</h2>
+      <!-- Income Field -->
+      <div class="input-group">
+        <input type="number" id="income" required>
+        <label for="income">Monthly Income ($)</label>
+      </div>
+      <!-- Expenses Field -->
+      <div class="input-group">
+        <input type="number" id="expenses" required>
+        <label for="expenses">Monthly Expenses ($)</label>
+      </div>
+      <!-- Savings Field -->
+      <div class="input-group">
+        <input type="number" id="savings" required>
+        <label for="savings">Monthly Savings ($)</label>
+      </div>
+      <!-- Financial Goal Field -->
+      <div class="input-group">
+        <input type="number" id="goal" required>
+        <label for="goal">Financial Goal ($)</label>
+      </div>
+      <!-- Debts Field (Allow Negative Numbers) -->
+      <div class="input-group">
+        <input type="number" id="debts">
+        <label for="debts">Debts ($)</label>
+      </div>
+      <!-- Get Advice Button -->
+      <button type="submit" class="btn">Get Advanced Advice</button>
+    </form>
+    <!-- Advice Display -->
+    <div id="advice" class="advice"></div>
+  </div>
+  
+  <!-- Footer -->
+  <footer id="footer">
+    <p>&copy; 2024 FinBot.ai. All rights reserved.</p>
+    <div class="social-media">
+      <!-- Social media icons (replace # with actual links) -->
+      <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
+      <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
+      <a href="#"><img src="images/instagram.png" alt="Instagram"></a>
+      <a href="#"><img src="images/linkedin.png" alt="LinkedIn"></a>
+    </div>
+    <p class="disclaimer">Disclaimer: This service is for entertainment purposes only and does not constitute professional financial advice.</p>
+  </footer>
+  
+  <!-- Link to the JavaScript file -->
+  <script src="script.js"></script>
+</body>
+</html>

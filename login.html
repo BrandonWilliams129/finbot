@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - FinBot.ai</title>
+  <!-- Link to the CSS stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="logo">
+      <img src="images/logo.png" alt="FinBot.ai Logo" height="40">
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#footer">Contact</a></li>
+    </ul>
+  </nav>
+  
+  <!-- Marketing Content Above Login -->
+  <section class="login-marketing">
+    <h2>Join FinBot.ai Today</h2>
+    <p>Unlock personalized financial insights and take the first step towards financial freedom.</p>
+  </section>
+  
+  <!-- Login Form Container -->
+  <div class="login-container">
+    <form id="loginForm">
+      <h2>Login to Your Account</h2>
+      <!-- Email Field -->
+      <div class="input-group">
+        <input type="email" id="email" required>
+        <label for="email">Email Address</label>
+      </div>
+      <!-- Password Field -->
+      <div class="input-group">
+        <input type="password" id="password" required>
+        <label for="password">Password</label>
+      </div>
+      <!-- Password Requirements -->
+      <p class="password-requirements">Password must contain at least 1 number and 1 symbol.</p>
+      <!-- Login Button -->
+      <button type="submit" class="btn">Login</button>
+      <!-- Error Message -->
+      <p id="error-message" class="error-message"></p>
+    </form>
+  </div>
+  
+  <!-- Footer -->
+  <footer id="footer">
+    <p>&copy; 2024 FinBot.ai. All rights reserved.</p>
+    <div class="social-media">
+      <!-- Social media icons (replace # with actual links) -->
+      <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
+      <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
+      <a href="#"><img src="images/instagram.png" alt="Instagram"></a>
+      <a href="#"><img src="images/linkedin.png" alt="LinkedIn"></a>
+    </div>
+    <p class="disclaimer">Disclaimer: This service is for entertainment purposes only and does not constitute professional financial advice.</p>
+  </footer>
+  
+  <!-- Link to the JavaScript file -->
+  <script src="script.js"></script>
+</body>
+</html>
