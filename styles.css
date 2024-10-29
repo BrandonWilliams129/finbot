@@ -10,36 +10,38 @@
 
 /* Global Styles */
 body {
-  background: linear-gradient(135deg, #e6f2ff, #ffffff);
+  background: linear-gradient(135deg, #2a2f35, #3d4446);
+  background: linear-gradient(135deg, #1e2838, #2d3846);
   font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
-  color: #333; /* Dark gray for readable text */
-  line-height: 1.6; /* Increase line height for better legibility */
+  color: #e0e0e0;
+  line-height: 1.6;
 }
 
 h2, h3 {
-  color: #007BFF; /* Keep headers distinct with a shade that matches your primary color */
+  color: #00A3FF;
+  text-shadow: 0 0 10px rgba(0, 163, 255, 0.3);
 }
 
 a {
-  color: #007BFF;
+  color: #00A3FF;
   text-decoration: none;
   transition: color 0.3s;
 }
 
 a:hover {
-  color: #0056b3; /* Darker shade for hover */
+  color: #40B7FF;
 }
 
 /* Component Styles */
 .card {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(30, 40, 56, 0.95);
   padding: 20px;
   margin: 20px 0;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   transition: transform 0.2s, box-shadow 0.3s ease-in-out;
 }
 
@@ -54,24 +56,41 @@ a:hover {
 }
 /* Navigation Bar Styling */
 nav {
-  position: fixed;
-  width: 100%;
-  background: rgba(255, 255, 255, 0.95);
-  padding: 10px 20px;
+  padding: 0;
+  background: rgba(30, 40, 56, 0.95);
+  position: relative;
+  z-index: 2;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  z-index: 1000;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-nav .logo img {
-  height: 40px;
+.logo {
+  padding: 0;
+  margin: 0;
+}
+
+.logo img {
+  height: 100px;
+  display: block;
+  mask-image: linear-gradient(
+    to right,
+    black 70%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    black 70%,
+    transparent 100%
+  );
 }
 
 nav ul {
   list-style: none;
   display: flex;
+  margin-left: auto;
+  padding-right: 20px;
 }
 
 nav ul li {
@@ -80,51 +99,57 @@ nav ul li {
 
 nav ul li a {
   text-decoration: none;
-  color: #333;
+  color: #00A3FF;
   font-weight: 500;
   transition: color 0.3s;
 }
 
 nav ul li a:hover {
-  color: #007BFF;
+  color: #40B7FF;
+}
+
+/* If you have an active/current page link */
+nav ul li a.active {
+  color: #40B7FF;
+  text-shadow: 0 0 10px rgba(0, 163, 255, 0.3);
 }
 
 /* Hero Section Styling */
 .hero {
-  background: linear-gradient(135deg, #007BFF, #00C9FF); /* Bright blue gradient */
+  background: linear-gradient(135deg, #2a2f35, #3d4446);
   background-image: url('images/hero.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   height: 100vh;
-  color: white; /* Keep text white for contrast */
+  color: #e0e0e0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
   padding: 0 20px;
-  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.3); /* Add a subtle shadow for depth */
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.3);
 }
 
 .hero h1 {
   font-size: 48px;
   margin-bottom: 20px;
   animation: fadeInDown 1s ease-out;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Add text shadow for visibility */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 .hero p {
   font-size: 20px;
   margin-bottom: 30px;
   animation: fadeInUp 1.5s ease-out;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Add text shadow for visibility */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 .hero .btn {
   text-decoration: none;
   padding: 15px 30px;
-  background: #FFD700; /* Gold button for visibility */
+  background: #FFD700;
   color: black;
   border-radius: 50px;
   font-size: 18px;
@@ -133,46 +158,71 @@ nav ul li a:hover {
 }
 
 .hero .btn:hover {
-  background: #FFA500; /* Darker gold on hover */
+  background: #FFA500;
   transform: translateY(-3px);
 }
 
 /* Benefits and Features Section Styling */
 .benefits, .features {
+  padding: 4rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 80px 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  background: #1e2838;
+}
+
+.benefits-grid, .features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  width: 100%;
 }
 
 .benefit, .feature {
-  max-width: 800px;
-  text-align: center;
-  margin-bottom: 50px;
-  opacity: 0;
-  transform: translateY(50px);
+  background: rgba(30, 40, 56, 0.95);
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.benefit:hover, .feature:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
 }
 
 .feature img {
-  width: 100%; /* Make the image responsive */
-  height: auto; /* Maintain aspect ratio */
-  border-radius: 5px;
-  transition: transform 0.3s ease; /* Add smooth transition */
+  width: 100%;
+  max-width: 600px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
 }
 
 .feature img:hover {
-  transform: scale(1.05); /* Zoom-in effect on hover */
+  transform: scale(1.02);
+}
+
+.feature p {
+  margin-top: 20px;
 }
 
 .benefit h2, .feature h2 {
-  font-size: 32px;
-  margin-bottom: 20px;
-  color: #333;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: #2d3436;
 }
 
 .benefit p, .feature p {
-  font-size: 18px;
-  color: #666;
+  color: #d0d0d0;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  letter-spacing: 0.2px;
 }
 
 /* FAQ Section Styling */
@@ -205,16 +255,16 @@ nav ul li a:hover {
 
 /* Footer Styling */
 #footer {
-  background-color: #f8f8f8;
+  background-color: rgba(30, 40, 56, 0.95);
   padding: 20px;
   text-align: center;
-  border-top: 1px solid #e0e0e0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 #footer p {
   margin: 10px 0;
   font-size: 14px;
-  color: #666;
+  color: #b8b8b8;
 }
 
 .social-media {
@@ -223,18 +273,19 @@ nav ul li a:hover {
 
 .social-media a {
   margin: 0 10px;
-  color: #333;
+  color: #00A3FF;
   text-decoration: none;
   transition: color 0.3s;
 }
 
 .social-media a:hover {
-  color: #007BFF; /* Change color on hover */
+  color: #40B7FF;
 }
 
 .social-media img {
   height: 30px;
   transition: transform 0.3s ease;
+  filter: brightness(1.5) saturate(1.2);
 }
 
 .social-media img:hover {
@@ -242,21 +293,23 @@ nav ul li a:hover {
 }
 
 .social-media i {
-  color: #333;
+  color: #00A3FF;
   transition: color 0.3s, transform 0.3s;
 }
 
 .social-media i:hover {
-  color: #007BFF; /* Hover color for icons */
-  transform: scale(1.2); /* Enlarge icon slightly on hover */
+  color: #40B7FF;
+  transform: scale(1.2);
 }
 
 
 /* Login Marketing Section */
 .login-marketing {
   text-align: center;
-  padding: 120px 20px 40px 20px;
-  background: #f0f2f5;
+  padding: 40px 20px;
+  background: rgba(255, 255, 255, 0.9);
+  margin-bottom: 20px;
+  border-radius: 10px;
 }
 
 .login-marketing h2 {
@@ -273,18 +326,27 @@ nav ul li a:hover {
 /* Login Form Styling */
 .login-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  min-height: 100vh;
   padding: 40px 20px;
+  background: url('images/login.jpg') center no-repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  background-attachment: fixed;
 }
 
 #loginForm {
-  background: white;
+  background: rgba(30, 40, 56, 0.95);
   padding: 40px;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 400px;
+  margin-top: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 #loginForm h2 {
@@ -298,7 +360,7 @@ nav ul li a:hover {
   max-width: 600px;
   margin: 2rem auto;
   padding: 1.5rem;
-  border-top: 1px solid #eee;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .skip-login .skip-prompt {
@@ -317,7 +379,7 @@ nav ul li a:hover {
 }
 
 .skip-login .info-message {
-  color: #666;
+  color: #b8b8b8;
   font-size: 0.9rem;
   margin: 0;
 }
@@ -333,9 +395,9 @@ nav ul li a:hover {
   padding: 10px 0;
   background: none;
   border: none;
-  border-bottom: 2px solid #ccc;
+  border-bottom: 2px solid #555;
   font-size: 16px;
-  color: #333;
+  color: #ffffff;
   transition: border-bottom-color 0.3s;
 }
 
@@ -344,12 +406,12 @@ nav ul li a:hover {
   border-bottom-color: #007BFF;
 }
 
-/* Properly position the label above when focused or filled */
+/* Floating labels */
 .input-group label {
   position: absolute;
   top: 10px;
   left: 0;
-  color: #aaa;
+  color: #e0e0e0;
   pointer-events: none;
   transition: 0.3s ease all;
   font-size: 16px;
@@ -360,7 +422,7 @@ nav ul li a:hover {
 .input-group input:valid ~ label {
   top: -20px;
   font-size: 12px;
-  color: #007BFF;
+  color: #00A3FF;
 }
 
 /* Modal Styling */
@@ -386,7 +448,7 @@ nav ul li a:hover {
 }
 
 #calculatorModal .input-group input::placeholder {
-  color: #aaa; /* Lighter placeholder color */
+  color: #aaa;
   font-size: 16px;
 }
 .modal {
@@ -401,17 +463,17 @@ nav ul li a:hover {
 }
 
 .modal-content {
-  background-color: #fff;
+  background-color: #1e2838;
   margin: 10% auto;
   padding: 20px;
-  border: 1px solid #888;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   width: 80%;
   max-width: 500px;
   border-radius: 10px;
 }
 
 .close {
-  color: #aaa;
+  color: #e0e0e0;
   float: right;
   font-size: 28px;
   font-weight: bold;
@@ -419,7 +481,7 @@ nav ul li a:hover {
 
 .close:hover,
 .close:focus {
-  color: #000;
+  color: #ffffff;
   text-decoration: none;
   cursor: pointer;
 }
@@ -444,22 +506,22 @@ nav ul li a:hover {
 .btn {
   display: block;
   width: 100%;
-  background: #007BFF;
-  color: white;
+  background: #1a4d80;
+  color: #ffffff;
   padding: 12px 0;
   border: none;
   border-radius: 50px;
   cursor: pointer;
   font-size: 16px;
-  transition: background 0.3s, transform 0.3s;
   transition: box-shadow 0.3s, transform 0.3s;
+  font-weight: 500;
+  letter-spacing: 0.5px;
 }
 
 .btn:hover {
-  background: #0056b3;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  background: #2c5f91;
   transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(26, 77, 128, 0.4);
 }
 
 /* Dashboard Styling */
@@ -522,7 +584,7 @@ nav ul li a:hover {
 }
 
 .donation-buttons .btn {
-  background: #007BFF; /* Blue background for buttons */
+  background: #007BFF;
   color: white;
   margin: 0 10px;
   padding: 12px 20px;
@@ -535,4 +597,284 @@ nav ul li a:hover {
     font-size: 36px;
   }
   .hero p {
-    font-size
+    font-size: 18px;
+  }
+}
+
+.benefit p, .feature p {
+  line-height: 1.6;
+  margin-top: 15px;
+  color: #d0d0d0;
+  font-size: 1.1rem;
+}
+
+.benefit h2, .feature h2 {
+  color: #1a1a1a;
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+}
+
+.benefit, .feature {
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Section Headers */
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #2d3436;
+  width: 100%;
+}
+
+.benefit img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.benefit img:hover {
+  transform: scale(1.02);
+}
+
+/* Adjust card padding to accommodate images */
+.benefit {
+  padding: 1.5rem;
+}
+
+/* Optional: Add an overlay to ensure form readability */
+.login-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.3);
+  z-index: 0;
+}
+
+/* Ensure form stays above the overlay */
+#loginForm {
+  position: relative;
+  z-index: 1;
+}
+
+/* Headers and Titles */
+h1, h2, h3, h4, h5, h6 {
+  color: #00A3FF; /* Bright blue */
+  text-shadow: 0 0 10px rgba(0, 163, 255, 0.3);
+}
+
+.section-title {
+  color: #00A3FF;
+  text-shadow: 0 0 10px rgba(0, 163, 255, 0.3);
+}
+
+/* All Paragraph Text */
+p {
+  color: #e0e0e0; /* Bright white-gray */
+}
+
+/* Benefits and Features Text */
+.benefit h2, .feature h2 {
+  color: #00A3FF;
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+}
+
+.benefit p, .feature p {
+  color: #e0e0e0;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  letter-spacing: 0.2px;
+}
+
+/* Form Elements */
+.input-group label {
+  color: #e0e0e0;
+}
+
+.input-group input {
+  color: #ffffff;
+}
+
+/* Login Form */
+#loginForm h2 {
+  color: #00A3FF;
+}
+
+/* Hero Section */
+.hero h1 {
+  color: #ffffff;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.hero p {
+  color: #e0e0e0;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Navigation */
+nav ul li a {
+  color: #e0e0e0;
+  font-weight: 500;
+}
+
+/* Skip Login Section */
+.skip-login .skip-prompt {
+  color: #e0e0e0;
+  font-size: 1.1rem;
+}
+
+.skip-login .info-message {
+  color: #b8b8b8;
+}
+
+/* Footer */
+#footer p {
+  color: #b8b8b8;
+}
+
+/* FAQ Section */
+.faq h3 {
+  color: #00A3FF;
+  font-weight: 600;
+}
+
+.faq p {
+  color: #e0e0e0;
+}
+
+/* Marketing Sections */
+.login-marketing h2 {
+  color: #00A3FF;
+}
+
+.login-marketing p {
+  color: #e0e0e0;
+}
+
+/* Error Messages */
+.error-message {
+  color: #ff4d4d; /* Bright red */
+}
+
+/* Password Requirements */
+.password-requirements {
+  color: #b8b8b8;
+}
+
+/* Modal Content */
+.modal-content h2 {
+  color: #00A3FF;
+}
+
+.modal-content p {
+  color: #e0e0e0;
+}
+
+/* Links */
+a {
+  color: #40B7FF; /* Bright blue */
+}
+
+a:hover {
+  color: #66c4ff; /* Even brighter blue on hover */
+}
+
+/* Calculator Results */
+.advice {
+  color: #00A3FF;
+}
+
+/* Dashboard Specific Styling */
+.dashboard-title {
+  color: #00A3FF;
+  text-shadow: 0 0 10px rgba(0, 163, 255, 0.3);
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.dashboard-section h2 {
+  color: #00A3FF;
+  text-shadow: 0 0 10px rgba(0, 163, 255, 0.3);
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.dashboard-card {
+  background: rgba(30, 40, 56, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dashboard-stats h3 {
+  color: #00A3FF;
+  text-shadow: 0 0 10px rgba(0, 163, 255, 0.3);
+}
+
+.dashboard-menu h2 {
+  color: #00A3FF;
+  text-shadow: 0 0 10px rgba(0, 163, 255, 0.3);
+}
+
+/* Calculator Section */
+.calculator-section h2 {
+  color: #00A3FF;
+  text-shadow: 0 0 10px rgba(0, 163, 255, 0.3);
+}
+
+/* Results Section */
+.results-section h2 {
+  color: #00A3FF;
+  text-shadow: 0 0 10px rgba(0, 163, 255, 0.3);
+}
+
+/* FAQ and Form Headers */
+.faq-section h2,
+#financeForm h2,
+.financial-details h2 {
+  color: #00A3FF;
+  text-shadow: 0 0 10px rgba(0, 163, 255, 0.3);
+  margin-bottom: 20px;
+}
+
+/* Social Media Icons */
+.social-media {
+  margin-top: 10px;
+}
+
+.social-media a {
+  margin: 0 10px;
+  color: #00A3FF;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.social-media a:hover {
+  color: #40B7FF;
+}
+
+.social-media img {
+  height: 30px;
+  transition: transform 0.3s ease;
+  filter: brightness(1.5) saturate(1.2);
+}
+
+.social-media img:hover {
+  transform: scale(1.2);
+}
+
+.social-media i {
+  color: #00A3FF;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.social-media i:hover {
+  color: #40B7FF;
+  transform: scale(1.2);
+}
